@@ -187,3 +187,9 @@ This workflow can be used for:
 - Viral genome assembly  
 - Variant detection  
 - Molecular epidemiology studies
+
+---
+
+## Acknowledgement
+
+This workflow was developed as part of dengue virus genomic surveillance work conducted at CSIR–Institute of Genomics and Integrative Biology (IGIB).
