@@ -167,6 +167,17 @@ bcftools consensus -f barcode13.preconsensus.fasta barcode13.pass.vcf
 - bcftools  
 
 ---
+## Related Publication
+
+This workflow contributed to genomic analysis performed in the following study:
+
+Ravi V., Khare K., Mohite R., Mishra P., Halder S., Shukla R., Liu C.S.C., Yadav A., Soni J., Kanika K., Chaudhary K., Neha N., Tarai B., Budhiraja S., Khosla P., Sethi T., Imran M., Pandey R.  
+**Genomic hotspots in the DENV-2 serotype (E, NS4B, and NS5 genes) are associated with dengue disease severity in the endemic region of India.**  
+*PLOS Neglected Tropical Diseases* (2025)
+
+https://doi.org/10.1371/journal.pntd.0013034
+
+---
 
 ## Applications
 
