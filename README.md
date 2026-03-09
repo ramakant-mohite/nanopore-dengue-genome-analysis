@@ -133,6 +133,7 @@ bcftools
 ```
 bcftools view --include 'MIN(FMT/DP)>20 & MIN(FMT/GQ)>3' barcode13-merge_output.vcf > barcode13.pass.vcf
 ```
+```
 bcftools view --include 'MIN(FMT/DP)<=20 | MIN(FMT/GQ)<=3' barcode13-merge_output.vcf > barcode13.fail.vcf
 ```
 
