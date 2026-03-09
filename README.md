@@ -42,9 +42,9 @@ Guppy
 
 **Example command**
 
-
+```
 guppy_barcoder -i Basecalling/pass -s Demultiplexing --barcode_kits EXP-NBD104
-
+```
 
 ---
 
@@ -59,10 +59,10 @@ Sequencing reads are aligned to the Dengue virus reference genome.
 
 **Example commands**
 
-
+```
 minimap2 -a -x map-ont denv2.reference.fasta barcode13.fastq | samtools view -bS -F 4 - | samtools sort -o barcode13.sorted.bam
 samtools index barcode13.sorted.bam
-
+```
 
 ---
 
@@ -76,9 +76,9 @@ ARTIC pipeline (align_trim)
 
 **Example command**
 
-
+```
 align_trim --normalise 200 denv2.scheme.bed --remove-incorrect-pairs --report barcode13.alignreport.txt < barcode13.sorted.bam | samtools sort -o barcode13.trimmed.rg.sorted.bam
-
+```
 
 ---
 
@@ -92,9 +92,9 @@ ARTIC mask
 
 **Example command**
 
-
+```
 artic_make_depth_mask denv2.reference.fasta barcode13.primertrimmed.rg.sorted.bam barcode13.coverage_mask.txt
-
+```
 
 ---
 
@@ -108,14 +108,15 @@ Clair3
 
 **Example command**
 
-
-run_clair3.sh --bam_fn barcode13.trimmed.rg.sorted.bam
---ref_fn denv2.reference.fasta
---threads 40
---platform ont
---model_path models/r941_prom_hac_g238
+```
+run_clair3.sh \
+--bam_fn barcode13.trimmed.rg.sorted.bam \
+--ref_fn denv2.reference.fasta \
+--threads 40 \
+--platform ont \
+--model_path models/r941_prom_hac_g238 \
 --output barcode13
-
+```
 
 ---
 
@@ -129,11 +130,11 @@ bcftools
 
 **Example commands**
 
-
+```
 bcftools view --include 'MIN(FMT/DP)>20 & MIN(FMT/GQ)>3' barcode13-merge_output.vcf > barcode13.pass.vcf
-
+```
 bcftools view --include 'MIN(FMT/DP)<=20 | MIN(FMT/GQ)<=3' barcode13-merge_output.vcf > barcode13.fail.vcf
-
+```
 
 ---
 
@@ -147,11 +148,11 @@ bcftools
 
 **Example command**
 
-
+```
 bcftools consensus -f barcode13.preconsensus.fasta barcode13.pass.vcf
 -m barcode13.coverage_mask.txt
 -o barcode13.consensus.fasta
-
+```
 
 ---
 
