@@ -27,9 +27,9 @@ Guppy
 
 **Example command**
 
-
+```
 guppy_basecaller -i input_fast5 -s Basecalling -c dna_r9.4.1_450bps_fast.cfg -x cuda:0
-
+```
 
 ---
 
